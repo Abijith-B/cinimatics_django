@@ -1,0 +1,514 @@
+<!-- {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinimatics | Book Your Show</title>
+    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><h2>CINIMATICS</h2></div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="movieSearch" placeholder="Search for Movies, Streams, Events...">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#movies-section">Movies</a></li>
+                <li><a href="#stream-section">Stream</a></li>
+                <li><a href="#events-section">Events</a></li>
+
+                
+                <li><a href="{% url 'login' %}" id="signinBtn" class="signin-btn">Sign In</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-banner">
+        <img src="https://wallpapercave.com/wp/wp4336322.jpg" alt="Promo">
+    </header>
+
+     <main class="container">
+        
+        <section id="movies-section">
+            <div class="filter-bar">
+                <h3>Recommended Movies</h3>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://www.studioremarkable.com/wp-content/uploads/2012/08/Dark-Knight-Trilogy.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 9.0</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Dark Knight</h4>
+                        <p>Action | Adventure</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZjhkNjM0ZTMtNGM5MC00ZTQ3LTk3YmYtZTkzYzdiNWE0ZTA2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 8.8</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Inception</h4>
+                        <p>Sci-Fi | Action</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 8.7</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Interstellar</h4>
+                        <p>Sci-Fi | Drama</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://media.themoviedb.org/t/p/w500/22dj38IckjzEEUZwN1tPU5VJ1qq.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 7.2</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Star Wars</h4>
+                        <p>Sci-Fi | Adventure</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="stream-section">
+            <div class="filter-bar">
+                <h3>Premiere Streams</h3>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> 4K Ultra</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>John Wick</h4>
+                        <p>Action | Crime</p>
+                        <a href="#" class="book-btn bookShow">Rent ₹149</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> HD</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Martian</h4>
+                        <p>Sci-Fi | Drama</p>
+                        <a href="#" class="book-btn bookShow">Watch Now</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> Premiere</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Dune: Part Two</h4>
+                        <p>Action | Sci-Fi</p>
+                        <a href="#" class="book-btn bookShow">Rent ₹499</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> 4K</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Batman</h4>
+                        <p>Action | Crime</p>
+                        <a href="#" class="book-btn bookShow">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="events-section">
+            <div class="filter-bar">
+                <h3>Live Events & Plays</h3>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=500&q=60" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Sat, 25 Jan</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Music Festival 2026</h4>
+                        <p>Concert | Live</p>
+                        <a href="#" class="book-btn bookShow">Buy Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=60" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Sun, 26 Jan</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Directing Workshop</h4>
+                        <p>Educational | Film</p>
+                        <a href="#" class="book-btn bookShow">Register</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=500&q=60" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Fri, 30 Jan</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Standup Comedy</h4>
+                        <p>Comedy | Live</p>
+                        <a href="#" class="book-btn bookShow">Book Seats</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://www.nycastings.com/wp-content/uploads/2017/05/theatre-pup.jpg" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Sat, 1 Feb</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Theater Play</h4>
+                        <p>Drama | Arts</p>
+                        <a href="#" class="book-btn bookShow">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+        <div id="bookingPopup" class="popup-overlay">
+            <div class="popup-box">
+            <h2>Reserve Your Show</h2>
+
+            <label>Date:</label>
+            <input type="date" id="showDate">
+
+            <label>Time:</label>
+            <label>Time:</label>
+<select id="showTime">
+    <option value="">Select Time</option>
+    <option>00:00</option>
+    <option>03:00</option>
+    <option>06:00</option>
+    <option>09:00</option>
+    <option>12:00</option>
+    <option>15:00</option>
+    <option>18:00</option>
+    <option>21:00</option>
+</select>
+
+            <label>Theater Name:</label>
+<select id="theaterName">
+    <option value="">Select Theater</option>
+    <option>Aries Plex SL Cinemas</option>
+    <option>PVR Lulu Mall</option>
+    <option>Carnival Cinemas</option>
+    <option>Kairali Sree Nila Theatre</option>
+    <option>Kripa Cinemas</option>
+    <option>New Theatre</option>
+    <option>Ganga Theatre</option>
+    <option>Padmanabha Theatre</option>
+    <option>Kalabhavan Theatre</option>
+    <option>Ajanta Theatre</option>
+</select>
+
+<label>Price:</label>
+<select id="showPrice">
+    <option value="">Select Price</option>
+    <option value="149">₹149</option>
+    <option value="249">₹249</option>
+    <option value="499">₹499</option>
+</select>
+
+
+            <button id="reserveBtn">Reserve</button>
+            <button id="closePopup">Cancel</button>
+    </div>
+</div>
+
+        </section>
+
+    </main>
+
+    <script src="{% static 'movies/script.js' %}"></script>
+
+</body>
+</html>  -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinimatics | Book Your Show</title>
+    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><h2>CINIMATICS</h2></div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="movieSearch" placeholder="Search for Movies, Streams, Events...">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#movies-section">Movies</a></li>
+                <li><a href="#stream-section">Stream</a></li>
+                <li><a href="#events-section">Events</a></li>
+                <li><a href="{% url 'login' %}" id="signinBtn" class="signin-btn">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-banner">
+        <img src="https://wallpapercave.com/wp/wp4336322.jpg" alt="Promo">
+    </header>
+
+    <main class="container">
+        
+        <section id="movies-section">
+            <div class="filter-bar">
+                <h3>Recommended Movies</h3>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://www.studioremarkable.com/wp-content/uploads/2012/08/Dark-Knight-Trilogy.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 9.0</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Dark Knight</h4>
+                        <p>Action | Adventure</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZjhkNjM0ZTMtNGM5MC00ZTQ3LTk3YmYtZTkzYzdiNWE0ZTA2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 8.8</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Inception</h4>
+                        <p>Sci-Fi | Action</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 8.7</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Interstellar</h4>
+                        <p>Sci-Fi | Drama</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://media.themoviedb.org/t/p/w500/22dj38IckjzEEUZwN1tPU5VJ1qq.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-star"></i> 7.2</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Star Wars</h4>
+                        <p>Sci-Fi | Adventure</p>
+                        <a href="#" class="book-btn bookShow">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="stream-section">
+            <div class="filter-bar">
+                <h3>Premiere Streams</h3>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> 4K Ultra</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>John Wick</h4>
+                        <p>Action | Crime</p>
+                        <a href="#" class="book-btn bookShow">Rent ₹149</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> HD</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Martian</h4>
+                        <p>Sci-Fi | Drama</p>
+                        <a href="#" class="book-btn bookShow">Watch Now</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> Premiere</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Dune: Part Two</h4>
+                        <p>Action | Sci-Fi</p>
+                        <a href="#" class="book-btn bookShow">Rent ₹499</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie">
+                        <div class="rating"><i class="fas fa-play"></i> 4K</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Batman</h4>
+                        <p>Action | Crime</p>
+                        <a href="#" class="book-btn bookShow">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="events-section">
+            <div class="filter-bar">
+                <h3>Live Events & Plays</h3>
+            </div>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=500&q=60" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Sat, 25 Jan</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Music Festival 2026</h4>
+                        <p>Concert | Live</p>
+                        <a href="#" class="book-btn bookShow">Buy Tickets</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=60" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Sun, 26 Jan</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Directing Workshop</h4>
+                        <p>Educational | Film</p>
+                        <a href="#" class="book-btn bookShow">Register</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=500&q=60" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Fri, 30 Jan</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Standup Comedy</h4>
+                        <p>Comedy | Live</p>
+                        <a href="#" class="book-btn bookShow">Book Seats</a>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-img">
+                        <img src="https://www.nycastings.com/wp-content/uploads/2017/05/theatre-pup.jpg" alt="Event">
+                        <div class="rating"><i class="fas fa-calendar"></i> Sat, 1 Feb</div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Theater Play</h4>
+                        <p>Drama | Arts</p>
+                        <a href="#" class="book-btn bookShow">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="bookingPopup" class="popup-overlay">
+            <div class="popup-box">
+                <h2>Reserve Your Show</h2>
+
+                <label>Date:</label>
+                <input type="date" id="showDate">
+
+                <label>Time:</label>
+                <select id="showTime">
+                    <option value="">Select Time</option>
+                    <option>00:00</option>
+                    <option>03:00</option>
+                    <option>06:00</option>
+                    <option>09:00</option>
+                    <option>12:00</option>
+                    <option>15:00</option>
+                    <option>18:00</option>
+                    <option>21:00</option>
+                </select>
+
+                <label>Theater Name:</label>
+                <select id="theaterName">
+                    <option value="">Select Theater</option>
+                    <option>Aries Plex SL Cinemas</option>
+                    <option>PVR Lulu Mall</option>
+                    <option>Carnival Cinemas</option>
+                    <option>Kairali Sree Nila Theatre</option>
+                    <option>Kripa Cinemas</option>
+                    <option>New Theatre</option>
+                    <option>Ganga Theatre</option>
+                    <option>Padmanabha Theatre</option>
+                    <option>Kalabhavan Theatre</option>
+                    <option>Ajanta Theatre</option>
+                </select>
+
+                <label>Price:</label>
+                <select id="showPrice">
+                    <option value="">Select Price</option>
+                    <option value="149">₹149</option>
+                    <option value="249">₹249</option>
+                    <option value="499">₹499</option>
+                </select>
+
+                <button id="reserveBtn">Reserve</button>
+                <button id="closePopup">Cancel</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="{% static 'movies/script.js' %}"></script>
+
+</body>
+</html>

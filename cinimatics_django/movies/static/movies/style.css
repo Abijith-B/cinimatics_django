@@ -1,0 +1,653 @@
+/* 
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #333545;
+    --accent: #F84464;
+    --bg: #1a1a1a;
+    --card-bg: #2b2d3d;
+    --text: #ffffff;
+    --sub-text: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+nav {
+    background: var(--primary);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h2 {
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.search-bar {
+    background: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+
+.search-bar i {
+    color: #666;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.signin-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.hero-banner {
+    margin-top: 100px;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    padding-top: 100px;
+    margin-bottom: 60px;
+}
+
+.filter-bar {
+    margin-bottom: 25px;
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
+}
+
+.filter-bar h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+
+.movie-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.movie-card:hover {
+    transform: scale(1.05) rotateX(6deg) rotateY(6deg);
+    box-shadow: 0 20px 50px rgba(248, 68, 100, 0.6);
+}
+
+.movie-card.active {
+    transform: scale(1.2) rotateY(360deg);
+    z-index: 999;
+    box-shadow: 0 0 40px var(--accent);
+}
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 380px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.movie-card:hover .card-img img {
+    transform: scale(1.1);
+}
+.rating {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info p {
+    color: var(--sub-text);
+    font-size: 14px;
+    margin-bottom: 15px;
+} 
+
+.book-btn {
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.book-btn:hover {
+    background: white;
+    color: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+
+@media (max-width: 768px) {
+    .search-bar {
+        display: none;
+    }
+    
+    .hero-banner img {
+        height: 50vh;
+    }
+}
+
+
+
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.popup-box {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.popup-box select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+
+
+
+
+
+
+.popup-box input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.popup-box button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#reserveBtn {
+    background: green;
+    color: white;
+}
+
+#closePopup {
+    background: red;
+    color: white;
+}
+
+
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Variables & General Reset */
+:root {
+    --primary: #333545;
+    --accent: #F84464;
+    --bg: #1a1a1a;
+    --card-bg: #2b2d3d;
+    --text: #ffffff;
+    --sub-text: #b3b3b3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background: var(--primary);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h2 {
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.search-bar {
+    background: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.signin-btn {
+    background: var(--accent);
+    color: white !important;
+    padding: 7px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Hero Banner - Restored to 100vh */
+.hero-banner {
+    margin-top: 80px; /* Space for fixed nav */
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100vh; /* Original Height */
+    object-fit: cover;
+    display: block;
+}
+
+/* Main Content Area */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    padding-top: 100px;
+    margin-bottom: 60px;
+}
+
+.filter-bar {
+    margin-bottom: 25px;
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 40px 0;
+}
+
+/* Movie Grid & 3D Card Effects */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.movie-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transform-style: preserve-3d; /* Required for 3D effect */
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.movie-card:hover {
+    transform: scale(1.05) rotateX(6deg) rotateY(6deg); /* Your original 3D tilt */
+    box-shadow: 0 20px 50px rgba(248, 68, 100, 0.6);
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 380px; /* Your original height */
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.movie-card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+.rating {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info p {
+    color: var(--sub-text);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.book-btn {
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.book-btn:hover {
+    background: white;
+    color: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* Popup Styling */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    color: #333;
+    text-align: center;
+}
+
+.popup-box label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.popup-box select, .popup-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+#reserveBtn {
+    background: green;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#closePopup {
+    background: red;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-bar { display: none; }
+    .hero-banner img { height: 50vh; }
+}
