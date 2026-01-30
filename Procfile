@@ -1,0 +1,1 @@
+web: gunicorn cinimatics_django.wsgi
