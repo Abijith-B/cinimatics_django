@@ -1,6 +1,8 @@
 altair==5.5.0
 asgiref==3.11.0
 attrs==25.3.0
+gunicorn==24.1.1
+whitenoise==6.4.0
 certifi==2025.8.3
 charset-normalizer==3.4.3
 click==8.2.1
