@@ -1,0 +1,25 @@
+# Heavy ML / development packages moved out of production requirements
+absl-py==2.3.1
+flatbuffers==25.9.23
+gast==0.6.0
+google-pasta==0.2.0
+grpcio==1.75.1
+h5py==3.15.0
+joblib==1.5.1
+keras==3.11.3
+libclang==18.1.1
+ml_dtypes==0.5.3
+numpy==2.3.2
+opt_einsum==3.4.0
+optree==0.17.0
+pandas==2.3.1
+protobuf==6.32.0
+pyarrow==21.0.0
+pydeck==0.9.1
+scikit-learn==1.7.1
+scipy==1.16.1
+tensorboard==2.20.0
+tensorboard-data-server==0.7.2
+tensorflow==2.20.0
+streamlit==1.48.1
+watchdog==6.0.0

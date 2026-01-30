@@ -1,0 +1,4 @@
+Django==6.0.1
+gunicorn==24.1.1
+whitenoise==6.4.0
+# Add any other small libs you need for runtime (e.g., mysqlclient or psycopg2)
